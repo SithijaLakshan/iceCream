@@ -3,7 +3,7 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/cover.css" rel="stylesheet">
     <script src="js/ie-emulation-modes-warning.js"></script>
-    <div class="site-wrapper" style="background-color:#000;">
+    <div class="site-wrapper" style="background-image: url(images/back.jpg); color:#fff;">
 
       <div class="site-wrapper-inner">
 
@@ -22,11 +22,11 @@
             </div>
           </div>
 
-          <div class="inner cover">
-            <h1 class="cover-heading"><img src="favicon.ico"/></h1>
-            <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
+          <div class="inner cover text-center">
+            <h1 class="cover-heading"><img width="25%" src="favicon.ico"/><br/> ice-Cream</h1>
+            <p class="lead">ice-cream alows you to explore the world with your friends and alow you to share your own stuff with friends safely.</p>
             <p class="lead">
-              <a href="#" class="btn btn-lg btn-default">Learn more</a>
+              <a href="{{ route('register') }}" class="btn btn-lg btn-default">Sign up</a>
             </p>
           </div>
 

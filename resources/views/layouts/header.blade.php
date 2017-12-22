@@ -12,7 +12,7 @@
 
                     <!-- Branding Image -->
                     <div class="navbar-text">
-                        <div class="col-sm-2"><img class="img-circle " width="20px" src="favicon.ico"/></div><div class="col-sm-8">{{ config('app.name', 'Laravel') }}</div>
+                        <div class="col-sm-3"><img class="img-circle " width="20px" src="favicon.ico"/></div><div class="col-sm-9">{{ config('app.name', 'Laravel') }}</div>
                     </div>
                 </div>
 
