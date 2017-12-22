@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\post;
 
 class PostsController extends Controller
 {
@@ -34,7 +35,26 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, array(
+            'title'=>'required|max:255',
+            'img'=>'required'
+        ));
+        $post = new Post;
+
+        $post->title = $request->title;
+        
+
+        if($request->hasfile('img')){
+            $image = $request->file('img');
+            $filename = time().'.' . $image->getClientOriginalExtension();
+            $location = public_path('img/'. $filename);
+            Image::make($image)->save($location);
+
+            $post->img = $filename;
+        }
+
+        $post->save();
+        return redirect()->route('post.show', $post->id);
     }
 
     /**
@@ -45,7 +65,7 @@ class PostsController extends Controller
      */
     public function show($id)
     {
-        //
+       echo 'saved';
     }
 
     /**
