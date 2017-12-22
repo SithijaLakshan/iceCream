@@ -32,7 +32,7 @@
 
           <div class="mastfoot">
             <div class="inner">
-              <p>IceCream By <a href="/contact">Sithija Lakshan...</a></p>
+              <p class="text-right">IceCream By <a href="/contact">Sithija Lakshan...</a></p>
             </div>
           </div>
 

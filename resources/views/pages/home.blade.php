@@ -101,20 +101,75 @@
     <div class="row">
         <div class="col-sm-6 panel panel-default">
             <h4 class="panel-heading">Posts</h4>
-            <div class="animated zoomInUp thumbnail" style="overflow:hidden;">
+            <div class="animated zoomInUp" style="overflow:hidden;">
                 <div class="col-sm-12">
-                <img src="images/7.jpg" width="100%">
-                </div>                
+                <p><strong>User_Name</strong> Posted at <strong>Time</strong></p>
+                <img src="images/7.jpg" width="100%">                            
+                </div>                  
+                <div class="col-sm-12">                
+                <div class="col-sm-10">
+                    <div class="btn-group">
+                        <a href="">
+                            <div class="btn btn-link" style="font-size: 25px;">
+                                <span class="glyphicon glyphicon-heart-empty"></span>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class="btn btn-link" style="font-size: 25px;">
+                                <span class="glyphicon glyphicon-comment"></span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <a href="">
+                        <div class="btn btn-link" style="font-size: 25px;">
+                            <span class="glyphicon glyphicon-bookmark"></span>
+                        </div>
+                    </a>
+                </div>
+                </div>
+            </div>
+
+            <div class="animated zoomInUp" style="overflow:hidden;">
                 <div class="col-sm-12">
-                           
+                <p><strong>User_Name</strong> Posted at <strong>Time</strong></p>
+                <img src="images/7.jpg" width="100%">                            
+                </div>                  
+                <div class="col-sm-12">                
+                <div class="col-sm-10">
+                    <div class="btn-group">
+                        <a href="">
+                            <div class="btn btn-link" style="font-size: 25px;">
+                                <span class="glyphicon glyphicon-heart-empty"></span>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class="btn btn-link" style="font-size: 25px;">
+                                <span class="glyphicon glyphicon-comment"></span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <a href="">
+                        <div class="btn btn-link" style="font-size: 25px;">
+                            <span class="glyphicon glyphicon-bookmark"></span>
+                        </div>
+                    </a>
+                </div>
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-1">
         </div>
+
         <div class="col-sm-4 panel panel-default">
             <h4 class="panel-heading">Ads</h4>
         </div>
+        
     </div>
+    
 
 @endsection

@@ -12,8 +12,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-       
-    <link href="css/cover.css" rel="stylesheet">
+    {{--  <link href="css/b-theme.css" rel="stylesheet">  --}}
+    <link href="css/cover.css" rel="stylesheet">    
     <script src="js/ie-emulation-modes-warning.js"></script>
     <style>
             html, body {
