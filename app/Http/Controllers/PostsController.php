@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\post;
+use Intervention\Image\Facades\Image as Image;
 
 class PostsController extends Controller
 {
@@ -47,7 +48,7 @@ class PostsController extends Controller
         if($request->hasfile('img')){
             $image = $request->file('img');
             $filename = time().'.' . $image->getClientOriginalExtension();
-            $location = public_path('img/'. $filename);
+            $location = storage_path('/app/img/'. $filename);
             Image::make($image)->save($location);
 
             $post->img = $filename;
