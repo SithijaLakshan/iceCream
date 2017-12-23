@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\post;
 use Intervention\Image\Facades\Image as Image;
-
+use Session;
 class PostsController extends Controller
 {
     /**
@@ -55,6 +55,7 @@ class PostsController extends Controller
         }
 
         $post->save();
+        Session::flash('success',' ✔ Post created successfully...');
         return redirect()->route('post.show', $post->id);
     }
 
@@ -66,7 +67,8 @@ class PostsController extends Controller
      */
     public function show($id)
     {
-       echo 'saved';
+    //    echo 'saved';
+    return view('posts.show');
     }
 
     /**

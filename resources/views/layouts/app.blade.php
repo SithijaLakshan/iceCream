@@ -74,6 +74,7 @@
     <div id="app">
         @include('layouts.header')
         <div class="container" Style="margin-bottom:100px;">
+            @include('layouts.messages')
             @yield('content')
         </div>
         @include('layouts.footer')
