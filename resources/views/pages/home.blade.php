@@ -8,79 +8,28 @@
 <div id="c-stories" class="carousel slide" data-ride="carousel">
 
     <ol class="carousel-indicators">
-        <li data-target="#c-stories" data-slide-to="0" class="active">a</li>
-        <li data-target="#c-stories" data-slide-to="1">a</li>
-        <li data-target="#c-stories" data-slide-to="2">a</li>
-        <li data-target="#c-stories" data-slide-to="3">a</li>
-        <li data-target="#c-stories" data-slide-to="4">a</li>
-        <li data-target="#c-stories" data-slide-to="5">a</li>
-        <li data-target="#c-stories" data-slide-to="6">a</li>
-        <li data-target="#c-stories" data-slide-to="7">a</li>
-        <li data-target="#c-stories" data-slide-to="8">a</li>
-        <li data-target="#c-stories" data-slide-to="9">a</li>
+    <li data-target="#c-stories" data-slide-to="0" class="active">a</li>
+    @foreach($posts as $post)        
+        <li data-target="#c-stories" data-slide-to="1">a</li>  
+    @endforeach     
     </ol>
     
     <div class="carousel-inner bg-primary" style="border-radius:100px;min-height:175px;" role="listbox">
         <div class="item active">
-            <img src="images/1.jpg" height="100px"class="center-block img-responsive img-circle" width="100px" alt="...">
+            <img src="/images/1.jpg" height="100px"class="center-block img-responsive img-circle" width="150px" alt="...">
             <div class="col-sm-12">
                 <p style="text-align:center;">Elisa Thudeson</p>
             </div>
         </div>
+        @foreach($posts as $post)
         <div class="item">
-            <img src="images/2.jpg" height="100px" class="center-block img-responsive img-circle" width="100px" alt="...">
+            <img src="{{asset('img/'.$post->img)}}" height="100px"class="center-block img-responsive  img-thumbnail img-rounded" width="150px" style="margin-top:10px; margin-bootom:10px;" alt="...">
             <div class="col-sm-12">
-                <p style="text-align:center;">Elisa Thudeson</p>
+                <p style="text-align:center;">{{$post->title}}</p>
             </div>
         </div>
-        <div class="item">
-            <img src="images/3.jpg" height="100px" class="center-block img-responsive img-circle" width="100px" alt="...">
-            <div class="col-sm-12">
-                <p style="text-align:center;">Elisa Thudeson</p>
-            </div>
-        </div>
-        <div class="item">
-            <img src="images/4.jpg" height="100px" class="center-block img-responsive img-circle" width="100px" alt="...">
-            <div class="col-sm-12">
-                <p style="text-align:center;">Elisa Thudeson</p>
-            </div>
-        </div>
-        <div class="item">
-            <img src="images/5.jpg" height="100px" class="center-block img-responsive img-circle" width="100px" alt="...">
-            <div class="col-sm-12">
-                <p style="text-align:center;">Elisa Thudeson</p>
-            </div>
-        </div>
-        <div class="item">
-            <img src="images/6.jpg" height="100px" class="center-block img-responsive img-circle" width="100px" alt="...">
-            <div class="col-sm-12">
-                <p style="text-align:center;">Elisa Thudeson</p>
-            </div>
-        </div>
-        <div class="item">
-            <img src="images/7.jpg" height="100px" class="center-block img-responsive img-circle" width="100px" alt="...">
-            <div class="col-sm-12">
-                <p style="text-align:center;">Elisa Thudeson</p>
-            </div>
-        </div>
-        <div class="item">
-            <img src="images/8.jpg" height="100px" class="center-block img-responsive img-circle" width="100px" alt="...">
-            <div class="col-sm-12">
-                <p style="text-align:center;">Elisa Thudeson</p>
-            </div>
-        </div>
-        <div class="item">
-            <img src="images/9.jpg" height="100px" class="center-block img-responsive img-circle" width="100px"alt="...">
-            <div class="col-sm-12">
-                <p style="text-align:center;">Elisa Thudeson</p>
-            </div>
-        </div>
-        <div class="item">
-            <img src="images/10.jpg" height="100px" class="center-block img-responsive img-circle" width="100px" alt="...">
-            <div class="col-sm-12">
-                <p style="text-align:center;">Elisa Thudeson</p>
-            </div>
-        </div>
+        @endforeach
+
          <a class="left carousel-control" style="border-radius:100px;" href="#c-stories" role="button" data-slide="prev">
             <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
@@ -101,65 +50,48 @@
     <div class="row">
         <div class="col-sm-6 panel panel-default">
             <h4 class="panel-heading">Posts</h4>
+            @foreach($posts as $post)
             <div class="animated zoomInUp" style="overflow:hidden;">
-                <div class="col-sm-12">
-                <p><strong>User_Name</strong> Posted at <strong>Time</strong></p>
-                <img src="images/7.jpg" width="100%">                            
+                <div class="col-sm-12">   
+                <h3 class="text-center">{{$post->title}}</h3>             
+                <p class="text-right"><strong>{{$post->user_name}}</strong> Posted at <strong>{{$post->created_at}}</strong></p>
+                <img src="{{asset('img/'.$post->img)}}" class="img-thumbnail img-responsive" width="100%">                            
                 </div>                  
-                <div class="col-sm-12">                
-                <div class="col-sm-10">
-                    <div class="btn-group">
+                <div class="col-sm-12 row">                
+                    <div class="col-sm-10">
+                        <div class="btn-group">
+                            <a href="">
+                                <div class="btn btn-link" style="font-size: 25px;">
+                                    <span class="glyphicon glyphicon-heart-empty"></span>
+                                </div>
+                            </a>
+                            <a href="">
+                                <div class="btn btn-link" style="font-size: 25px;">
+                                    <span class="glyphicon glyphicon-comment"></span>
+                                </div>
+                            </a>
+                            
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
                         <a href="">
                             <div class="btn btn-link" style="font-size: 25px;">
-                                <span class="glyphicon glyphicon-heart-empty"></span>
-                            </div>
-                        </a>
-                        <a href="">
-                            <div class="btn btn-link" style="font-size: 25px;">
-                                <span class="glyphicon glyphicon-comment"></span>
+                                <span class="glyphicon glyphicon-bookmark"></span>
                             </div>
                         </a>
                     </div>
                 </div>
-                <div class="col-sm-2">
-                    <a href="">
-                        <div class="btn btn-link" style="font-size: 25px;">
-                            <span class="glyphicon glyphicon-bookmark"></span>
-                        </div>
-                    </a>
-                </div>
-                </div>
-            </div>
 
-            <div class="animated zoomInUp" style="overflow:hidden;">
-                <div class="col-sm-12">
-                <p><strong>User_Name</strong> Posted at <strong>Time</strong></p>
-                <img src="images/7.jpg" width="100%">                            
-                </div>                  
-                <div class="col-sm-12">                
-                <div class="col-sm-10">
-                    <div class="btn-group">
-                        <a href="">
-                            <div class="btn btn-link" style="font-size: 25px;">
-                                <span class="glyphicon glyphicon-heart-empty"></span>
-                            </div>
-                        </a>
-                        <a href="">
-                            <div class="btn btn-link" style="font-size: 25px;">
-                                <span class="glyphicon glyphicon-comment"></span>
-                            </div>
-                        </a>
+                <div class="col-sm-12 row">
+                    <h4>Comments:</h4>
+                    <div class="well well-sm" style="min-height:20px;">
+                        <p>No Comments. If available comments shows here...</p>
                     </div>
                 </div>
-                <div class="col-sm-2">
-                    <a href="">
-                        <div class="btn btn-link" style="font-size: 25px;">
-                            <span class="glyphicon glyphicon-bookmark"></span>
-                        </div>
-                    </a>
-                </div>
-                </div>
             </div>
+            <hr>
+            @endforeach
+            
         </div>
         
         <div class="col-sm-1">

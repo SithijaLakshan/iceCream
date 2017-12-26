@@ -15,7 +15,8 @@ class PostsController extends Controller
      */
     public function index()
     {
-        //
+        $posts = post::all();
+        return view('pages.home')->with('posts',$posts);
     }
 
     /**
@@ -48,7 +49,7 @@ class PostsController extends Controller
         if($request->hasfile('img')){
             $image = $request->file('img');
             $filename = time().'.' . $image->getClientOriginalExtension();
-            $location = storage_path('/app/img/'. $filename);
+            $location = public_path('img/'. $filename);
             Image::make($image)->save($location);
 
             $post->img = $filename;
@@ -68,7 +69,8 @@ class PostsController extends Controller
     public function show($id)
     {
     //    echo 'saved';
-    return view('posts.show');
+    $post = Post::find($id);
+    return view('posts.show')->with('post', $post);
     }
 
     /**
@@ -101,6 +103,16 @@ class PostsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
+    {
+        //
+    }
+
+    public function add_like(Request $request, $id)
+    {
+        return redirect('/home');
+    }
+
+    public function del_like($id)
     {
         //
     }
